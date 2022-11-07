@@ -22,6 +22,6 @@ def circle(t,r):
 
 poly(greg,5,100)
 square(greg,200)
-circle(greg,100)
+circle(greg,200)
 
 turtle.exitonclick()
