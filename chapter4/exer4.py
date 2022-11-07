@@ -1,4 +1,5 @@
 import turtle
+import math
 greg = turtle.Turtle()
 
 def square(t,d):
@@ -12,10 +13,15 @@ def poly(t,s,d):
         t.fd(d)
         t.lt(360/s)
 
-
+def circle(t,r):
+    circum = 2*math.pi*r
+    n= 50
+    leng = circum/n
+    poly(t,n,leng)
 
 
 poly(greg,5,100)
 square(greg,200)
+circle(greg,100)
 
 turtle.exitonclick()
