@@ -32,6 +32,20 @@ def koch2(t,level,size):   ## here the level is set explicitly and
         t.left(60)
         koch2(t,level-1,size/3)
 
+
+def snowFlake(t,level,size):
+    t.penup()
+    t.sety(200)
+    t.setx(0)
+    t.pendown()
+    t.right(60)
+    koch2(t,level,size)
+    t.right(120)
+    koch2(t,level,size)
+    t.right(120)
+    koch2(t,level,size)                                                                   
+
+
 def kochRnd(t,level,size):   ## here the level is set explicitly and 
     ang1 = 60
     ang2 = 120
@@ -58,7 +72,11 @@ def kochRnd(t,level,size):   ## here the level is set explicitly and
 
 
 
+    
+snowFlake(greg,3,300)
+
 greg.penup()
+greg.setheading(0)
 greg.sety(100)
 greg.setx(-500)
 greg.pendown()
