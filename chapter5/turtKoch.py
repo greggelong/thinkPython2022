@@ -3,6 +3,7 @@
 
 
 import turtle
+import random
 
 greg = turtle.Turtle()
 
@@ -31,6 +32,30 @@ def koch2(t,level,size):   ## here the level is set explicitly and
         t.left(60)
         koch2(t,level-1,size/3)
 
+def kochRnd(t,level,size):   ## here the level is set explicitly and 
+    ang1 = 60
+    ang2 = 120
+    ang3 = 60
+    if level ==0:          ## the exit condition is the level
+        t.forward(size)
+    else:
+        koch2(t,level-1,size/3)
+        if (random.randint(0,1)==0):
+            ang1 =ang1*-1
+            print("bing",ang1)
+        t.left(ang1)
+        koch2(t,level-1,size/3)
+        if (random.randint(0,1)==0):
+            ang2 =ang2*-1
+            print("bong",ang2)
+        t.right(ang2)
+        koch2(t,level-1,size/3)
+        if (random.randint(0,1)==0):
+            ang3 =ang3*-1
+            print("pop",ang3)
+        t.left(ang3)
+        koch2(t,level-1,size/3)
+
 
 
 greg.penup()
@@ -44,7 +69,7 @@ greg.penup()
 greg.sety(-100)
 greg.setx(-500)
 greg.pendown()
-koch2(greg,2,900) 
+kochRnd(greg,4,900) 
 
 
 
